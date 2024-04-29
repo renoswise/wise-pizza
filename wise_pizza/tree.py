@@ -81,18 +81,15 @@ def decision_tree_simple(
 
     regressor.fit(X_encoded, y)
 
-    # separate categorical and continuous features in two lists
-    categorical_features = [feature for feature in feature_cols if dim_df[feature].dtype == 'object']
-    continuous_features = [feature for feature in feature_cols if feature not in categorical_features]
+    # # separate categorical and continuous features in two lists
+    # categorical_features = [feature for feature in feature_cols if dim_df[feature].dtype == 'object']
+    # continuous_features = [feature for feature in feature_cols if feature not in categorical_features]
 
-    nodes = extract_nodes(regressor)
-
-    print('pause')
-
-    return
+    return regressor
 
 
 def extract_nodes(decision_tree):
+
     tree = decision_tree.tree_
     nodes = {}
 
